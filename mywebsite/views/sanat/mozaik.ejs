@@ -1,0 +1,56 @@
+<%- include('../partials/header'); -%>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('images/moz3.png')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+            <h1>MOZAİK</h1>
+            <span class="subheading">This is what I do.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+      <!-- Main Content--> 
+      <div class="container">
+
+        <% foundBlogs.forEach( (blog)=>{ %>
+
+        <div class="row">
+          <div class="col-lg-3  mx-auto">
+            <img class="img-thumbnail" src="<%-blog.comImage %>" alt="blog images">
+          </div>
+          
+          <div class="col-lg-9  mx-auto">
+            <div class="post-preview">
+              <a href="/blogs/<%=blog._id%>">
+                <h2 class="post-title"> 
+                  <%= blog.title  %> 
+                </h2>    
+                <h3 class="post-subtitle">
+                  <%= blog.comSentence %> 
+                </h3>
+              </a>
+              <p class="post-meta">Posted by
+                <a href="#">KuasArt</a>
+                <%= blog.date %></p>
+            </div>
+            <hr>
+          
+  
+           <!--Pager--> 
+            <div class="clearfix">
+              <a class="btn btn-basic float-right" href="#">Önceki Post &rarr;</a>
+            </div>      
+          </div>
+        </div>  
+        <%  }); %> 
+      </div>
+      <hr>
+
+
+<%- include('../partials/footer'); -%>

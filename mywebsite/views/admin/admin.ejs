@@ -1,0 +1,56 @@
+<%- include('../partials/header'); -%>
+
+  <!-- Page Header -->
+  <header class="masthead" style="background-image: url('https://cdn.pixabay.com/photo/2013/10/25/20/46/mosaic-200864__340.jpg')">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="page-heading">
+            <h1>Admin Sayfası</h1>
+            <span class="subheading">Fıtratın Güzelliği Sanatla Yansısın</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+
+    <%  adminActions.forEach( (action)=> { %> 
+  
+    <div class="row">
+        <div class="col-lg-8  mx-auto">
+            <button id="<%=action.actionId%>" onclick="catchID(this.id)" type="button" class="btn btn-outline-primary btn-block"><%=action.displayName%></button>   
+        </div>
+    </div>
+    <%  }); %>
+  </div>
+
+  <script>
+      function catchID(clicked_id){
+          if(clicked_id==1){
+              window.location.href='changeHome'; return false;   
+          }
+          else if(clicked_id==2){
+              window.location.href='changeAbout'; return false;   
+          }
+          else if(clicked_id==3){
+              window.location.href='addYagliBoya'; return false;   
+          }
+
+          else if (clicked_id==4) {
+            window.location.href='addSuluBoya'; return false;
+          } 
+          else if (clicked_id==5) {
+            window.location.href='addMozaik'; return false;
+          } 
+          else 
+          {
+              window.location.href='listall'; return false;   
+          }
+
+      }
+  </script>
+
+<%- include('../partials/footer'); -%>
